@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
-echo 'changing directory to frontend/'
-cd frontend
-
-echo 'Building ...'
+set -x
 npm run build
 
-echo 'Starting ...'
-npm run start &
+npm start &
+sleep 1
+
+echo $! > .pidfile
+set +x

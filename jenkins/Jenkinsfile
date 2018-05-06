@@ -10,6 +10,13 @@ pipeline {
     }
 
     stages {
+        stage('SetUp') {
+            steps {
+                echo 'Setting up workspace...'
+                sh 'chmod +x jenkins/frontend/*'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building...'
@@ -20,7 +27,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'chmod +x jenkins/frontend/*'
                 sh './jenkins/frontend/deploy.sh'
             }
         }
