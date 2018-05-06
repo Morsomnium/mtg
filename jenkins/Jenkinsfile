@@ -20,7 +20,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'jenkins/frontend/deploy.sh'
+                sh 'cd frontend'
+                sh 'npm build'
             }
         }
     }
