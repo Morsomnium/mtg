@@ -6,4 +6,6 @@ cd frontend
 pwd
 
 npm install
+
+pwd
 set +x
