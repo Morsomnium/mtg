@@ -3,5 +3,7 @@
 set -x
 cd frontend
 
+pwd
+
 npm install
 set +x
