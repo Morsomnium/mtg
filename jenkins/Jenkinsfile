@@ -21,8 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'chmod +x jenkins/frontend/*'
-                sh 'cd frontend'
-                sh 'npm build'
+                sh './jenkins/frontend/deploy.sh'
             }
         }
     }
